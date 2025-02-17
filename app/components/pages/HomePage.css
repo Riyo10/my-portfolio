@@ -1,0 +1,113 @@
+/* Pop-up animation */
+@keyframes popUp {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .pop-up-animation {
+    display: inline-block;
+    animation: popUp 1.8s ease-out forwards;
+  }
+  
+  /* Fade-in background animation */
+  @keyframes fadeInBackground {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .bg-cover {
+    animation: fadeInBackground 2s ease-out forwards;
+  }
+  
+  /* Paragraph animation */
+  @keyframes fadeInParagraph {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .paragraph-animation {
+    animation: fadeInParagraph 3s ease-out 0.4s;
+  }
+  
+  /* Button animation */
+  @keyframes fadeInButton {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .button-animation {
+    animation: fadeInButton 1s ease-out 0.6s;
+  }
+  
+  /* Social icon animations */
+  @keyframes fadeInSocialIcon {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .social-icon {
+    animation: fadeInSocialIcon 1s ease-out forwards;
+  }
+  
+  /* LinkedIn animation delay */
+  .linkedin-animation {
+    animation-delay: 0.9s;
+  }
+  
+  /* GitHub animation delay */
+  .github-animation {
+    animation-delay: 1.2s;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    transform: translateY(-5px);
+    background-color: #006605;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* LinkedIn and GitHub icons hover effect */
+  a:hover .fa-linkedin, a:hover .fa-github {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Optional: Add smooth transitions for other elements */
+  .text-4xl, .text-lg {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .text-4xl:hover, .text-lg:hover {
+    opacity: 0.8;
+  }
+  

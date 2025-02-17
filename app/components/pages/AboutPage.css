@@ -1,0 +1,175 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure body takes full height */
+  body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Background and Layout */
+  .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #2d2d2d, #5c6b73);
+  }
+  
+  /* Timeline Item - General Styles */
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly lower for initial positioning */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .timeline-item:nth-child(even) {
+    transform: translateX(50%);
+  }
+  
+  .timeline-item:nth-child(odd) {
+    transform: translateX(-50%);
+  }
+  
+  /* Hover effect improvements for timeline items */
+  .timeline-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background color change */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Soft shadow around the item */
+  }
+  
+  .timeline-item .w-10 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .timeline-item:hover .w-10 {
+    transform: scale(1.1); /* Slightly larger icon */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Light shadow around the icon */
+    background-color: rgba(255, 255, 255, 0.2); /* Icon background color change */
+  }
+  
+  /* Timeline item content hover */
+  .timeline-item:hover .flex-1 {
+    transform: translateY(-5px); /* Slight lift on hover */
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-item .flex-1 {
+    transition: transform 0.3s ease;
+  }
+  
+  /* Animation for text */
+  h1, h3 {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 4s steps(30) 1s forwards;
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scroll animations */
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly lower for initial positioning */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .py-16 {
+      padding-top: 8rem; /* Adjust padding for smaller screens */
+      padding-bottom: 8rem;
+    }
+  
+    .max-w-6xl {
+      padding: 0 16px;
+    }
+  
+    .timeline-item {
+      padding: 12px;
+    }
+  }
+  
+  /* Ensure proper alignment in flex */
+  .relative {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Prevent unwanted margins on the left */
+  .max-w-6xl {
+    width: 100%;
+    max-width: 1200px; /* You can adjust this if needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding to avoid content touching edges */
+  }
+  
+  /* Timeline Item - Icon Style */
+  .timeline-item .w-10 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover effects for the icons */
+  .timeline-item:hover .w-10 {
+    transform: scale(1.1); /* Slightly larger icon */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Light shadow around the icon */
+    background-color: rgba(255, 255, 255, 0.2); /* Icon background color change */
+  }
+  
+  .timeline-item:hover .flex-1 {
+    transform: translateY(-5px); /* Slight lift on hover */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect improvements for timeline items */
+  .timeline-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background color change */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Soft shadow around the item */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .timeline-item {
+      padding: 12px;
+    }
+  }
+  

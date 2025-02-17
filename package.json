@@ -1,0 +1,30 @@
+{
+  "name": "supriyo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "framer-motion": "^12.4.3",
+    "next": "^15.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-modal": "^3.16.3",
+    "react-slick": "^0.30.3",
+    "react-spring": "^9.7.5",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

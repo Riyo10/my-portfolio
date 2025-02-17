@@ -1,0 +1,14 @@
+/pages
+  ├── /about.js
+  ├── /contact.js
+  ├── /projects.js
+  ├── /blog.js (optional)
+  ├── /resume.js (optional)
+  └── /404.js
+/components
+  ├── /Navbar.js
+  ├── /Footer.js (optional)
+  ├── /ProjectCard.js (to display individual projects)
+  └── /ContactForm.js (optional, for the contact page)
+/styles
+  └── /globals.css (or other global styles)
