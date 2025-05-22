@@ -61,7 +61,7 @@ export default function Projects() {
             <h3 className="text-xl font-semibold text-white mt-4">Swapnochura</h3>
             <p className="text-base text-white mt-2 flex-1">An Ngo Empowering communities through sustainable development, education, and social justice initiatives worldwide.</p>
             <div className="mt-auto flex justify-center w-full">
-              <a href="https://www.swapnochura.com" className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-300 w-40 text-center">
+              <a href="https://www.swapnachura.in/" className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-300 w-40 text-center">
                 View Project
               </a>
             </div>
