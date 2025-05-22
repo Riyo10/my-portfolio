@@ -58,10 +58,10 @@ export default function Projects() {
           {/* Project Card 3 */}
           <div className="project-card bg-white bg-opacity-20 backdrop-blur-lg p-6 rounded-lg shadow-xl border border-white flex flex-col">
             <img src="/project3_1.png" alt="Project 3" className="w-full h-48 object-cover rounded-t-lg" />
-            <h3 className="text-xl font-semibold text-white mt-4">VNO</h3>
+            <h3 className="text-xl font-semibold text-white mt-4">Swapnochura</h3>
             <p className="text-base text-white mt-2 flex-1">An Ngo Empowering communities through sustainable development, education, and social justice initiatives worldwide.</p>
             <div className="mt-auto flex justify-center w-full">
-              <a href="/" className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-300 w-40 text-center">
+              <a href="https://www.swapnochura.com" className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition duration-300 w-40 text-center">
                 View Project
               </a>
             </div>
