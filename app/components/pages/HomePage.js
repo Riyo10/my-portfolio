@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Ensure correct import
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si'; // Import LeetCode icon
 import "./HomePage.css";
 
 export default function Home() {
@@ -9,12 +10,12 @@ export default function Home() {
           <div className="text-white max-w-lg">
             {/* Heading with Pop-up Animation applied to "Supriyo" only */}
             <h1 className="text-4xl font-semibold mb-4 pop-up-animation">
-              Hi, I'm  Supriyo,
+              Hi, I'm Supriyo,
             </h1>
 
             {/* Paragraph */}
             <p className="text-lg mb-6 paragraph-animation">
-            A Passionate  Developer specializing in building scalable web applications, mobile apps, and software solutions, with a focus on delivering high-quality, user-centric products.
+              A Passionate Developer specializing in building scalable web applications, mobile apps, and software solutions, with a focus on delivering high-quality, user-centric products.
             </p>
 
             {/* Resume Button */}
@@ -42,6 +43,15 @@ export default function Home() {
                 className="social-icon github-animation"
               >
                 <FaGithub className="text-white text-2xl hover:text-gray-800 transition duration-300" />
+              </a>
+
+              <a
+                href="https://leetcode.com/u/supriyomaity10/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon leetcode-animation"
+              >
+                <SiLeetcode className="text-white text-2xl hover:text-yellow-500 transition duration-300" />
               </a>
             </div>
           </div>
