@@ -1,16 +1,11 @@
-import Footer from "./components/Footer";
-import AboutPage from "./components/pages/AboutPage";
-import Contact from "./components/pages/Contact";
-import HomePage from "./components/pages/HomePage";
-import Project from "./components/pages/Project";
+// import Navbar from './components/Navbar';
+import HeroSection from './pages/HeroSection';
+
 export default function Home() {
   return (
     <>
-      <HomePage />
-      <AboutPage />
-      <Project/>
-      <Contact/>
-      <Footer/>
-     </>
+      {/* <Navbar /> */}
+      <HeroSection />
+    </>
   );
 }

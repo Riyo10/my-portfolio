@@ -34,3 +34,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+your-portfolio/
+│
+├── public/
+│   └── favicon.ico
+│
+├── styles/
+│   └── globals.css
+│
+├── components/
+│   ├── Navbar.js
+│   └── Section.js
+│
+├── pages/
+│   ├── _app.js
+│   └── index.js
+│
+├── .gitignore
+├── package.json
+└── next.config.js
+
+🔥 Option 1: Burnt Orange + Charcoal + Off-White + Neon Teal
+Vibe: Bold, modern, creative
+
+Burnt Orange: #FF6B2D
+
+Charcoal: #2C2C2C
+
+Off-White: #F6F5F3
+
+Neon Teal Accent: #00F0B5

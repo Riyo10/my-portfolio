@@ -1,11 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* slick-carousel styles */
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: 'Commissioner';
+  src: url('/fonts/Commissioner-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
-  background-color: white;
+    background-color: #000;
+     font-family: 'Commissioner', sans-serif;
 }
