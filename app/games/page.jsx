@@ -9,16 +9,17 @@ const games = [
     description: 'A memory matching game where you flip cards to find pairs.',
     link: '/mygames/memory-game',
   },
-  // {
-  //   name: 'Shape Dodger',
-  //   description: 'Dodge falling shapes and survive as long as you can!',
-  //   link: '/mygames/Shape-dodger',
-  // },
+  {
+    name: 'Vegas Slots',
+    description: 'Dodge falling shapes and survive as long as you can!',
+    link: '/mygames/vegas-slots',
+  },
   {
     name: '2048',
     description: 'Slide the tiles to combine numbers and reach the 2048 tile!',
     link: '/mygames/2048',
   },
+
 ];
 
 const container = {
