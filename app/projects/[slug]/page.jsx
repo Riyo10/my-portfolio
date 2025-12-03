@@ -77,28 +77,35 @@ export default function ProjectDetailPage() {
           {project.description}
         </MotionDiv>
 
-        {/* Image Gallery */}
+        {/* Image Gallery - FIXED SECTION */}
         <MotionDiv className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" variants={itemVariants}>
-          {project.images.map((img, idx) => (
-            <MotionDiv
-              key={idx}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 10px 20px rgba(255,107,45,0.4)',
-              }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="rounded-lg overflow-hidden cursor-pointer"
-            >
-              <Image
-                src={img}
-                alt={`${project.title} screenshot ${idx + 1}`}
-                width={600}
-                height={400}
-                className="object-cover w-full h-[250px] md:h-[200px]"
-                priority={idx === 0}
-              />
-            </MotionDiv>
-          ))}
+          {/* Added optional chaining (?.) and validation check inside map */}
+          {project.images?.map((img, idx) => {
+            
+            // SECURITY CHECK: If image url is missing or empty, skip rendering it
+            if (!img || typeof img !== 'string') return null;
+
+            return (
+              <MotionDiv
+                key={idx}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 10px 20px rgba(255,107,45,0.4)',
+                }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="rounded-lg overflow-hidden cursor-pointer"
+              >
+                <Image
+                  src={img}
+                  alt={`${project.title} screenshot ${idx + 1}`}
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-[250px] md:h-[200px]"
+                  priority={idx === 0}
+                />
+              </MotionDiv>
+            );
+          })}
         </MotionDiv>
 
         {/* Skills Used */}
