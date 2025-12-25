@@ -1,110 +1,177 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  RiMenu4Line,
+  RiCloseLine,
+  RiCompass3Line,
+  RiCodeSSlashLine,
+  RiUser6Line,
+  RiMailSendLine,
+  RiUserSmileLine,
+} from "react-icons/ri";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home", icon: RiCompass3Line },
+  { href: "/about", label: "Profile", icon: RiCodeSSlashLine },
+  { href: "/projects", label: "Work", icon: RiUser6Line },
+  { href: "/contact", label: "Connect", icon: RiMailSendLine },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
-  const mobileMenuVariants = {
-    hidden: { height: 0, opacity: 0 },
-    visible: {
-      height: 'auto',
-      opacity: 1,
-      transition: { duration: 0.3, ease: 'easeInOut' },
-    },
-    exit: { height: 0, opacity: 0, transition: { duration: 0.2 } },
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, y: -10 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1 },
-    }),
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-[#FF6B2D] select-none">
-            Supriyo
-          </Link>
+    <div className="fixed top-0 inset-x-0 z-[100] flex justify-center p-4 pointer-events-none">
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`
+          pointer-events-auto flex items-center justify-between 
+          w-full max-w-5xl px-6 transition-all duration-500 ease-in-out
+          ${
+            scrolled
+              ? "h-14 bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              : "h-20 bg-transparent"
+          }
+        `}
+      >
+        {/* Identity Group: Logo + Name */}
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="relative">
+            <div className="w-9 h-9 bg-[#FF6B2D] rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-all duration-300 shadow-[0_0_15px_rgba(255,107,45,0.3)]">
+              <span className="text-black font-black text-xl">S</span>
+            </div>
+            {/* Pulsing online status dot */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-black rounded-full" />
+          </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8">
-            {navLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="hover:text-[#FF6B2D] font-medium transition-colors duration-300"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+          <div className="flex flex-col leading-none">
+            <span className="text-lg font-black tracking-tighter text-white uppercase group-hover:text-[#FF6B2D] transition-colors">
+              Supriyo Maity
+            </span>
+          </div>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-4">
+          <ul className="flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-md">
+            {navLinks.map(({ href, label, icon: Icon }) => {
+              const isActive = pathname === href;
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`
+                      relative flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all
+                      ${
+                        isActive
+                          ? "text-[#FF6B2D]"
+                          : "text-gray-400 hover:text-white"
+                      }
+                    `}
+                  >
+                    <Icon className="text-lg" />
+                    <span className="hidden lg:block">{label}</span>
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-glow"
+                        className="absolute inset-0 bg-[#FF6B2D]/10 rounded-full -z-10 border border-[#FF6B2D]/20"
+                      />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
+        </div>
 
-          {/* Hamburger Icon */}
+        {/* Mobile Toggle with Name Preview */}
+        <div className="flex items-center gap-4 md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden focus:outline-none"
-            aria-label="Toggle menu"
+            className="p-2 text-[#FF6B2D] hover:bg-white/10 rounded-full transition-colors"
           >
-            {menuOpen ? (
-              <FaTimes size={24} className="text-[#FF6B2D]" />
-            ) : (
-              <FaBars size={24} className="text-[#FF6B2D]" />
-            )}
+            {menuOpen ? <RiCloseLine size={28} /> : <RiMenu4Line size={28} />}
           </button>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Animated Mobile Menu */}
+      {/* Fullscreen Mobile Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            key="mobileMenu"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={mobileMenuVariants}
-            className="md:hidden bg-black px-4 py-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-[150] md:hidden flex flex-col items-center justify-center pointer-events-auto"
           >
-            <ul className="space-y-4 text-center">
-              {navLinks.map(({ href, label }, i) => (
+            {/* Identity header in mobile menu */}
+            <div className="absolute top-8 left-8 flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#FF6B2D] rounded-xl flex items-center justify-center">
+                <span className="text-black font-black text-2xl font-mono">
+                  S
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-black text-white uppercase tracking-tighter">
+                  Supriyo Maity
+                </span>
+                <span className="text-[10px] text-[#FF6B2D] font-mono tracking-widest uppercase">
+                  System Administrator
+                </span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-8 right-8 text-[#FF6B2D] p-2 bg-white/5 rounded-full"
+            >
+              <RiCloseLine size={32} />
+            </button>
+
+            <ul className="space-y-10 text-center">
+              {navLinks.map(({ href, label, icon: Icon }, i) => (
                 <motion.li
                   key={href}
-                  custom={i}
-                  initial="hidden"
-                  animate="visible"
-                  variants={linkVariants}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
                 >
                   <Link
                     href={href}
                     onClick={() => setMenuOpen(false)}
-                    className="block text-[#FF6B2D] font-semibold text-lg hover:text-white transition-colors duration-300"
+                    className="group flex flex-col items-center gap-3"
                   >
-                    {label}
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 group-active:scale-90 transition-transform shadow-xl">
+                      <Icon className="text-4xl text-[#FF6B2D]" />
+                    </div>
+                    <span className="text-4xl font-black text-white tracking-tighter uppercase italic">
+                      {label}
+                    </span>
                   </Link>
                 </motion.li>
               ))}
             </ul>
+
+            {/* Bottom Footer for Mobile */}
+            <div className="absolute bottom-10 text-gray-600 font-mono text-[10px] uppercase tracking-[0.4em]">
+              Verified Profile © 2026
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </div>
   );
 }
