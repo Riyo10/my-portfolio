@@ -95,6 +95,15 @@ export default function Navbar() {
               );
             })}
           </ul>
+
+          {/* 90s Version Button */}
+          <a href="/app/90s-version/index.html" target="_blank" rel="noopener noreferrer">
+            <button
+              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all hover:scale-105 shadow-[0_0_15px_rgba(168,85,247,0.4)]"
+            >
+              Go to 90s Version
+            </button>
+          </a>
         </div>
 
         {/* Mobile Toggle with Name Preview */}
