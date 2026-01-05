@@ -1,0 +1,313 @@
+/* 90s STYLE CSS - TOTALLY RADICAL! */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    background-color: #000080;
+    color: #000000;
+    margin: 20px;
+    overflow-x: hidden;
+}
+
+/* Glitter Text Effect */
+.glitter-text {
+    color: #FF00FF;
+    text-shadow: 
+        2px 2px 0px #FFFF00,
+        4px 4px 0px #00FFFF,
+        6px 6px 0px #FF0000,
+        8px 8px 10px #000000;
+    font-size: 48px;
+    font-weight: bold;
+    animation: rainbow 3s infinite;
+}
+
+/* Rainbow Animation */
+@keyframes rainbow {
+    0% { color: #FF0000; }
+    14% { color: #FF7F00; }
+    28% { color: #FFFF00; }
+    42% { color: #00FF00; }
+    57% { color: #0000FF; }
+    71% { color: #8B00FF; }
+    85% { color: #FF00FF; }
+    100% { color: #FF0000; }
+}
+
+/* Blink Animation (since <blink> is deprecated) */
+blink {
+    animation: blinker 1s linear infinite;
+    font-weight: bold;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Tables */
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+table a {
+    text-decoration: none;
+    color: #0000FF;
+    font-weight: bold;
+}
+
+table a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+}
+
+table a:visited {
+    color: #800080;
+}
+
+/* Links */
+a {
+    color: #0000FF;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #FF00FF;
+    background-color: #FFFF00;
+}
+
+a:visited {
+    color: #800080;
+}
+
+/* Marquee Styles */
+marquee {
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 10px;
+    border: 3px solid #000000;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    font-size: 18px;
+}
+
+/* Horizontal Rules */
+hr {
+    border: none;
+    height: 5px;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 42px;
+    animation: pulse 2s infinite;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Lists */
+ul {
+    list-style-image: url('https://web.archive.org/web/20091026164357/http://geocities.com/lovelessrascal2002/star.gif');
+}
+
+li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+textarea {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 14px;
+    border: 3px solid #FF00FF;
+    background-color: #FFFF99;
+    padding: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background-color: #FFFFCC;
+    border-color: #00FFFF;
+    outline: none;
+}
+
+input[type="submit"] {
+    background: linear-gradient(180deg, #FF00FF, #FF0080);
+    color: #FFFFFF;
+    border: 3px solid #0000FF;
+    padding: 10px 20px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(180deg, #FFFF00, #FF7F00);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+/* Images */
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Center Tag (yes, we're using deprecated tags!) */
+center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Scrollbar Styling (for webkit browsers) */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF00FF;
+    border: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00FFFF;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #FF00FF;
+    color: #FFFF00;
+}
+
+::-moz-selection {
+    background-color: #FF00FF;
+    color: #FFFF00;
+}
+
+/* Spinning Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Add floating effect to certain images */
+img[alt="Star"] {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Make navigation more flashy */
+nav a, table[bgcolor="#FF00FF"] a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, table[bgcolor="#FF00FF"] a:hover {
+    transform: rotate(-5deg) scale(1.2);
+}
+
+/* Font Face for extra 90s vibes */
+@font-face {
+    font-family: 'WebFont';
+    src: local('Comic Sans MS'), local('Chalkboard SE');
+}
+
+/* Glow Effect */
+.glow {
+    text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FF00FF;
+}
+
+/* Retro Button Style */
+.retro-button {
+    background: #FF00FF;
+    color: #FFFF00;
+    border: 5px outset #FFFFFF;
+    padding: 10px 20px;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.retro-button:active {
+    border-style: inset;
+}
+
+/* Visitor Counter Style */
+#visitorCount {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #000000;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #00FF00;
+    box-shadow: 0 0 10px #00FF00;
+}
